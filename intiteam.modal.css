@@ -1,0 +1,32 @@
+.modalBackground{
+    background-color: #000;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    left:0;
+    opacity: .65;
+    outline: 0px none;
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: 21;
+}
+.modalShadow{
+    border:1px solid rgba(10,179,192,0.4);
+    box-shadow: 0 0 20px rgba(10, 179, 192, 0.4);
+    box-sizing: border-box;
+    display: block;
+    left: 258.5px;
+    outline: 0px none;
+    position: absolute;
+    top: 339.5px;
+    z-index: 22;
+}
+.modalContent {
+    background-color: #fff;
+    padding: 25px 30px 20px 30px;
+    display:  block;
+    cursor: default;
+    min-width: 210px;
+    max-width: 800px;
+}

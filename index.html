@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Snippet modal dialog</title>
+    <style>
+        html{
+            display: block;
+        }
+        body {
+            display: block;
+            height:100%;
+            margin: 0;
+            padding: 0;
+            width:100%;
+        }
+        form {
+            padding: 15px;
+        }
+        div {
+            margin-bottom: 5px;
+        }
+        #btndireccion {
+            background-color: steelblue;
+            color: #fff;
+        }
+        #close_dialog{
+            width: 80px;
+            padding: 5px 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="intiteam.modal.css" />
+</head>
+<body>
+    <form>
+        <div>
+            <input type="text" class="form-control" />
+        </div>
+        <div>
+            <input type="text" class="form-control" />
+        </div>
+        <div>
+            <input id="direccion" type="text" class="form-control" placeholder="Dirección" />
+            <button id="btndireccion" type="button">Ubicar</button>
+        </div>
+        <div>
+            <input type="text" class="form-control" />
+        </div>
+        <div>
+            <textarea name="obs" id="obs" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" class="form-control" value="Save" />
+        </div>
+    </form>
+    <div id="mycanvas" class="modalBackground" ispopup="1" ismodal="1" style="display:none" tabindex="-1"></div>
+    <div id="mypopup" class="modalShadow" ispopup="1" ismodal="true" role="alertdialog" style="display:none" tabindex="-1">
+        <div class="modalContent" style="margin-bottom:0;">
+            <div>
+                <input type="text" placeholder="Distrito" />
+            </div>
+            <div>
+                <select name="Provincia" id="Provincia"></select>
+            </div>
+            <div style="text-align: right;">
+                <button id="close_dialog" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="intiteam.core.js"></script>
+    <script src="intiteam.ui.modaldialog.js"></script>
+    <script>
+            var btn = $.getById('close_dialog');
+
+            btn.onclick = function(){
+                closeModal();
+                var txt = $.getById('direccion');
+                txt.focus();
+            }
+
+            btn = $.getById('btndireccion');
+            btn.onclick = function(){
+                showModal();
+            }
+    </script>
+</body>
+</html>
